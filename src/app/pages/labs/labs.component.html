@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Hola este mi nuevo proyecto</h1>
+  <h2>{{welcome}}</h2>
+  <h3>up</h3>
+  <ul>
+    <li>1</li>
+    @for (item of tasks(); track item) {
+      <li>{{ item }}</li>
+    }
+
+  </ul>
+  <hr />
+  <h2>eventos</h2>
+  {{name()}}
+  <button (click)="clickhandler()" class="btn">click me</button>
+  <button (dblclick)="clickhandler()">double click me</button>
+  <p>change</p>
+  <input type="number" [value]="person.age" (change)="changehandler($event)">
+  <p>keydown</p>
+  <input type="text" [value]="person.name" (keydown)="keydownhandler($event)">
+  <hr>
+    <h2>Signals</h2>
+    {{ name() }}
+    <input type="text" [value]="name()" (change)="changehandler($event)">
+    <h2>estrucutra</h2>
+    <ul>
+      <p>total:{{tasks().length}}</p>
+      @for (item of tasks(); track item; let i = $index) {
+        <li>
+          {{i}}. {{ item }}
+        </li>
+      }
+
+    </ul>
+    <hr>
+      <input type="color" [formControl]="colorControl">
+      <p>color:{{colorControl.value}} </p>
+      <svg>
+        <g>
+          <rect x="0" y="0" height="100" width="100" [attr.fill]="colorControl.value"/>
+        </g>
+      </svg>
+
+      <hr>
+        <input type="number" [formControl]="widhtControl" >
+        <span class="box" [style.width.px]="widhtControl.value"></span>
+        <hr>
+          <p>
+            <input type="text" [formControl]="nameControl"> <br>
+            <span class="message-error" [class.show]="nameControl.invalid && nameControl.touched">Nombre invalido</span>
+          </p>
+          <p>
+            <input type="text">
+          </p>
+
+        </div>
