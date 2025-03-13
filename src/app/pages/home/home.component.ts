@@ -68,7 +68,7 @@ export class HomeComponent {
         this.newTaskControl.setValue('');
         }
       }
-    
+
   }
   deletetask(index: number){
     this.tasks.update((tasks)=>tasks.filter((task,position)=>position!==index));
@@ -80,7 +80,7 @@ export class HomeComponent {
           return {
             ... task,
             completed:!task.completed
-          }          
+          }
         }
         return task;
       })
@@ -93,7 +93,7 @@ export class HomeComponent {
           return {
             ... task,
             editing:true
-          }          
+          }
         }
         return {
           ...task,
@@ -111,7 +111,7 @@ export class HomeComponent {
             ... task,
             title:input.value,
             editing:false
-          }          
+          }
         }
         return task;
       })
@@ -120,5 +120,8 @@ export class HomeComponent {
 
   changeFilter(filter:'all'|'pending'| 'completed'){
     this.filter.set(filter);
+  }
+  deletetaskfilter(){
+    this.tasks.update((tasks)=>tasks.filter((task)=>!task.completed));
   }
 }
