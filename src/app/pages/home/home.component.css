@@ -332,3 +332,24 @@ img {
     margin-top: 10px;
   }
 }
+.filters li a {
+  color: #4c33b1; /* Color del texto */
+  margin: 3px;
+  padding: 6px 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.filters li a:hover {
+  background-color: #4c33b1; /* Cambia el fondo */
+  color: white; /* Cambia el color del texto */
+}
+
+.filters li a.selected {
+  border-color: #4c33b1; /* Resalta el seleccionado */
+  font-weight: bold;
+  background-color: rgba(76, 51, 177, 0.1);
+}
+
